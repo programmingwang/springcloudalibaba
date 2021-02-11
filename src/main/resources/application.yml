@@ -1,0 +1,24 @@
+#公共配置
+management:
+  endpoint:
+    health:
+      show-details: always
+
+---
+#这三个减号是用来区分的
+#profile = x 的配置
+spring:
+  config:
+    activate:
+      on-profile: dev
+server:
+  port: 8081
+---
+#profile = y 的配置
+spring:
+  config:
+    activate:
+      on-profile: prod
+server:
+  tomcat:
+    max-connections: 1000
